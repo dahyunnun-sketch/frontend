@@ -1,0 +1,18 @@
+body{
+    margin: 0px;
+}
+
+h1{
+    margin: 0px;
+    /* 15진수 숫자 #ffffff #fff #000(검정) #111 */
+    background-color: #333;
+    color: #fff;
+    font-size: 2rem;
+    padding: 20px;
+    display: inline-block;
+}
+
+ul{
+    list-style: none;
+    color: blue;
+}
