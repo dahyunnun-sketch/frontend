@@ -1,0 +1,24 @@
+/* 태그 선택자 
+
+블럭요소 - 한줄을 몽땅 차지하는 요소
+인라인요소 - 컨텐츠가 가지고 있는 
+*/
+
+/* div{
+    border: 1px solid;
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+} */
+
+.title{
+    background-color: rgb(75, 75, 245);
+    color: #fff;
+    display: inline;
+}
+
+.accent{
+    color: red;
+    font-weight: 700;
+}
