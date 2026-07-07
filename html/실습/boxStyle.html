@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: red;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            padding: 0px 30px; /*상하 좌우*/
+            margin: 10px 20px 30px 40px; /*상 우 하 좌*/
+        }
+        .box2{
+            box-sizing: border-box;
+            border: 2px solid black;
+            border-radius: 50%;/*동글*/
+            width: 100px;
+            height: 100px;
+
+            background-color: aquamarine;
+            box-shadow: 5px 5px 30px 30px #333;
+
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+
+        }
+        .circle{
+            border-radius: 50%;
+        }
+        .banner{
+            background-color: blueviolet;
+            display: flex;
+            justify-content: space-between;
+        }
+        .boxitem{
+            width: 300px;
+            height: 200px;
+            background-color: bisque;
+            border: 1px solid red;
+            /*display: inline-block;*/
+            border-radius: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="box">a</div>
+    <div class="box2">방</div>
+
+    <img class="circle box2" src="/html/img/pf.jpg" alt="">
+    <div class="banner">
+       <div class="boxitem">1</div>
+       <div class="boxitem">2</div>
+       <div class="boxitem">3</div>
+       <div class="boxitem">4</div>
+
+
+    </div>
+</body>
+</html>
