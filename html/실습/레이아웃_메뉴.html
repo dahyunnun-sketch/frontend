@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .badge{
+        /*
+        position 속성
+             static (기본값-위치값 지정 안 됨)
+             relative - 부모상자, 위치값
+             absolute - 부모를 기준으로 배치(부모가 없다면 body를 기준)
+             fixed - 고정배치
+        */
+        position: relative; /*기준이 되는 상자*/
+        /* top: 10px;
+        left: 10px; */
+
+        border: none;
+        padding: 10px 20px;
+       }
+       .badge_img{
+        background-color: red;
+        border-radius: 50%;
+        padding: 10px;
+        position: absolute;/*기준이 되는 상자로 부터 위치를 잡음*/
+        top: -20px;
+        right: -20px;
+        /* bottom: ; */
+        /* left */
+       }
+       .fixedbox{
+        position: fixed;/*위치 고정*/
+        top: 10px;
+        right: 10px;
+        background-color: blue;
+       }
+       body{
+        height: 200vh;
+       }
+    </style>
+    <link rel="stylesheet" href="/html/css/레이아웃_메뉴.css">
+</head>
+<body>
+    <h2>badge</h2>
+    
+    <button class="badge">
+        버튼
+        <div class="badge_img">
+            99
+        </div>
+    </button>
+
+    <hr>
+    <h2>메뉴</h2>
+    
+
+    <ul class="menu">
+        <li class="menu_item">메뉴1
+            <ul class="submenu">
+                <li><a href="/html/css/style.css">서브메뉴1</a></li>
+                <li>서브메뉴2</li>
+                <li>서브메뉴3</li>
+                <li>서브메뉴4</li>
+                <li>서브메뉴5</li>
+            </ul>
+        </li>
+        <li class="menu_item">메뉴2</li>
+          <ul class="submenu">
+                <li>서브메뉴2</li>
+                <li>서브메뉴3</li>
+                <li>서브메뉴4</li>
+                <li>서브메뉴5</li>
+          </ul>
+        </li>
+        <li class="menu_item">메뉴3</li>
+        <li class="menu_item">메뉴4</li>
+        <li class="menu_item">메뉴5</li>
+    </ul>
+
+    <hr>
+    <h1>캐러셀</h1>
+    <div class="carousel">
+        <img class="active" src="https://comebello.com/web/upload/NNEditor/20250911/36a62a74cacf966b65c051928d6bd61c.jpg" alt="">
+        <img src="https://comebello.com/web/upload/NNEditor/20251013/fde608937d1fe82e14cf57a3eb708636.jpg" alt="">
+        <img src="https://comebello.com/web/upload/NNEditor/20250911/36a62a74cacf966b65c051928d6bd61c.jpg" alt="">
+        <button><</button>
+        <button>></button>
+        <p>총알배송</p>
+        <p>방문수령 즉시할인 혹시 지금 이순간에 🏠에 계시나요?!</p>
+</div> 
+
+
+
+
+</body>
+</html>
