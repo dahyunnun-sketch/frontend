@@ -5,45 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-       .badge{
-        /*
-        position 속성
-             static (기본값-위치값 지정 안 됨)
-             relative - 부모상자, 위치값
-             absolute - 부모를 기준으로 배치(부모가 없다면 body를 기준)
-             fixed - 고정배치
-        */
-        position: relative; /*기준이 되는 상자*/
-        /* top: 10px;
-        left: 10px; */
-
-        border: none;
-        padding: 10px 20px;
-       }
-       .badge_img{
-        background-color: red;
-        border-radius: 50%;
-        padding: 10px;
-        position: absolute;/*기준이 되는 상자로 부터 위치를 잡음*/
-        top: -20px;
-        right: -20px;
-        /* bottom: ; */
-        /* left */
-       }
-       .fixedbox{
-        position: fixed;/*위치 고정*/
-        top: 10px;
-        right: 10px;
-        background-color: blue;
-       }
-       body{
-        height: 200vh;
-       }
+       
     </style>
     <link rel="stylesheet" href="/html/css/레이아웃_메뉴.css">
 </head>
 <body>
     <h2>badge</h2>
+    <div class="fixedbox">
+        고정위치
+    </div>
     
     <button class="badge">
         버튼
@@ -68,6 +38,7 @@
         </li>
         <li class="menu_item">메뉴2</li>
           <ul class="submenu">
+                <li><a href="css_ex1.html">서브메뉴1</a></li>
                 <li>서브메뉴2</li>
                 <li>서브메뉴3</li>
                 <li>서브메뉴4</li>
@@ -90,9 +61,6 @@
         <p>총알배송</p>
         <p>방문수령 즉시할인 혹시 지금 이순간에 🏠에 계시나요?!</p>
 </div> 
-
-
-
 
 </body>
 </html>
