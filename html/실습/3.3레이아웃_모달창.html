@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/html/css/basic.css"> -->
+    <style>
+        /* 구글폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+        /* 
+          변수 선언
+          --변수명= 값;
+         */
+        :root{
+            --white: #fff;
+
+        }
+
+        /* 부모창 */
+        .modal-backdrop{
+            display: flex;
+            /* row */
+            /* 주축에 대한 정렬 */
+            justify-content:center;
+            /* align-items: stretch; */
+            align-items: center;
+            /* 전체 고정 검정화면 */
+            position: fixed;
+            background-color: hwb(0 56% 44%);
+            inset: 0;
+        }
+
+        .modal-box{
+            background-color: var(--white);
+            width: 400px;
+            padding: 20px;
+            position: relative;
+
+            border-radius: 20px;
+        }
+        .modal-box input{
+            width: 100%;
+        }
+        .modal-close{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+
+            border: none;
+            background-color: #fff;
+            font-size: 2rem;
+            color: #666;
+        }
+        .btn{
+            
+
+        }
+        /* .w-100{
+            width: 100%;
+        }
+        .bc-blue{
+            background-color: blue;
+        }
+        .h-30{
+            height: 30px;
+        }
+        .fs-large{
+            font-size: 1.2rem;
+        }
+        .border-radius-8{
+            border-radius: 8px;
+        }
+        .border-none{
+            border: none;
+        } */
+        #modalTitle{
+            font-family: "Chiron GoRound TC", sans-serif;
+            font-weight: 400;
+            font-size: 2rem;
+            font-style: normal;
+        }
+        #modalContent{
+            color: #666;
+            /* margin-bottom: 20px; */
+        }
+        /* 세로 마진이 중첩되는 경우, 큰쪽으로 표현된다 */
+        .modal-box h3, .modal-box h6{
+            margin: 0px;
+        }
+        .mb-20{
+            margin-bottom: 20px;
+
+        }
+        .modal-box input{
+            margin: 10px 0px;
+            height: 30px;
+            font-size: 1.2rem;
+            padding-left: 10px;
+            border: 1px solid #ccc;
+        }
+        .show{
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <!-- 모달을 여는 버튼 -->
+<button id="loginTrigger">로그인</button>
+
+<!-- 평소엔 숨겨져 있는 백드롭 + 모달 -->
+ <!--class 속성을 여러개 적용 할 경우, 띄어쓰기를 이용해서 연결-->
+<div class="modal-backdrop show" id="modalBackdrop">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="닫기">&times;</button>
+    <h3 id="modalTitle">로그인</h3>
+    <h6 id="modalContant" class="mb-20">이메일과 비밀번호를 입력하세요</h6>
+    <form id="loginForm">
+        <!--인라인 속성을 가지고 있는 요소는 마진/패딩 값을 가질 수 없다-->
+      <label for="email">이메일</label>
+      <input type="email" id="email" required>
+
+      <label for="password">비밀번호</label>
+      <input type="password" id="password" required>
+
+      <button type="submit" class="btn">로그인</button>
+    </form>
+  </div>
+</div> 
+
+
+</body>
+</html>
