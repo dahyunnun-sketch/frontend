@@ -6,11 +6,33 @@
   <title>무비 컬렉션 — CSS 선택자 연습</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="/html/css/basic.css">
+
+  <style>
+    tr:nth-child(2n){
+      background-color: var(--navy);
+    }
+    tr:nth-child(2n) td{
+      /* color: white; */
+    }
+    td:first-child{
+      padding-left: 20px;
+
+    }
+    tr:first-child td{
+
+    }
+    .grid article:nth-child(2){
+      border: 1px solid;
+      box-shadow: 0 4px 20px rgb(0, 0, 0);
+    }
+
+  </style>
   
 </head>
-<body>
+<body class="bg-light">
 
-  <header id="site-header" class="d-flex justify">
+  <header id="site-header" class="d-flex justify-between items-center
+  h-50px bg-dark text-white p-5">
     <div class="logo">🎬 무비 컬렉션</div>
     <nav>
       <ul class="nav-menu d-flex">
@@ -29,11 +51,12 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>이번 주, 어떤 영화 볼까요?</h1>
-    <p>큐레이션된 컬렉션에서 다음 영화를 찾아보세요.</p>
+  <!--검색-->
+  <section class="d-flex flex-col items-center bg-white pb-5">
+    <h1 class="pt-5 pb-2">이번 주, 어떤 영화 볼까요?</h1>
+    <p class="text-gray mb-4">큐레이션된 컬렉션에서 다음 영화를 찾아보세요.</p>
     <form class="search-form">
-      <input type="text" name="keyword" placeholder="영화 제목 검색" required>
+      <input class="border-left-2" type="text" name="keyword" placeholder="영화 제목 검색" required>
       <select name="genre">
         <option value="all">전체 장르</option>
         <option value="action">액션</option>
@@ -44,60 +67,61 @@
     </form>
   </section>
 
-  <section class="movie-list">
-    <h2>이번 달 추천작</h2>
-    <div class="grid">
+  <!--카드-->
+  <section class="d-flex flex-col max-w-lg mt-7 m-auto">
+    <h2 class="border-left-2 my-2 pl-4">이번 달 추천작</h2>
+    <div class="grid d-flex flex-wrap gap-5 ml-4 mt-5">
 
-      <article class="card" data-rating="9.2">
-        <img src="https://picsum.photos/seed/movie1/300/400" alt="스텔라 오디세이 포스터">
-        <div class="card-body">
+      <article class="card rounded-lg overflow-hidden flex-2" data-rating="9.2">
+        <img class="w-100 h-300px object-cover" src="https://picsum.photos/seed/movie1/300/400" alt="스텔라 오디세이 포스터">
+        <div class="card-body bg-white px-3 py-4 fs-sm">
           <h3>스텔라 오디세이</h3>
-          <p class="genre">SF · 액션</p>
+          <p class="genre text-gray mb-2">SF · 액션</p>
           <span class="badge">NEW</span>
         </div>
       </article>
 
-      <article class="card featured" data-rating="9.8">
-        <img src="https://picsum.photos/seed/movie2/300/400" alt="도시의 밤 포스터">
-        <div class="card-body">
-          <h3>도시의 밤</h3>
-          <p class="genre">스릴러 · 드라마</p>
-          <span class="badge">HOT</span>
-        </div>
-      </article>
-
-      <article class="card" data-rating="8.7">
-        <img src="https://picsum.photos/seed/movie3/300/400" alt="여름의 문 포스터">
-        <div class="card-body">
-          <h3>여름의 문</h3>
-          <p class="genre">로맨스</p>
+      <article class="card rounded-lg overflow-hidden flex-2" data-rating="9.2">
+        <img class="w-100 h-300px object-cover" src="https://picsum.photos/seed/movie1/300/400" alt="스텔라 오디세이 포스터">
+        <div class="card-body bg-white px-3 py-4 fs-sm">
+          <h3>스텔라 오디세이</h3>
+          <p class="genre text-gray mb-2">SF · 액션</p>
           <span class="badge">NEW</span>
         </div>
       </article>
 
-      <article class="card" data-rating="9.0">
-        <img src="https://picsum.photos/seed/movie4/300/400" alt="마지막 항해 포스터">
-        <div class="card-body">
-          <h3>마지막 항해</h3>
-          <p class="genre">모험 · SF</p>
+      <article class="card rounded-lg overflow-hidden flex-2" data-rating="9.2">
+        <img class="w-100 h-300px object-cover" src="https://picsum.photos/seed/movie1/300/400" alt="스텔라 오디세이 포스터">
+        <div class="card-body bg-white px-3 py-4 fs-sm">
+          <h3>스텔라 오디세이</h3>
+          <p class="genre text-gray mb-2">SF · 액션</p>
           <span class="badge">NEW</span>
         </div>
       </article>
 
-      <article class="card" data-rating="8.4">
-        <img src="https://picsum.photos/seed/movie5/300/400" alt="붉은 골목 포스터">
-        <div class="card-body">
-          <h3>붉은 골목</h3>
-          <p class="genre">미스터리</p>
-          <span class="badge">HOT</span>
+      <article class="card rounded-lg overflow-hidden flex-2" data-rating="9.2">
+        <img class="w-100 h-300px object-cover" src="https://picsum.photos/seed/movie1/300/400" alt="스텔라 오디세이 포스터">
+        <div class="card-body bg-white px-3 py-4 fs-sm">
+          <h3>스텔라 오디세이</h3>
+          <p class="genre text-gray mb-2">SF · 액션</p>
+          <span class="badge">NEW</span>
         </div>
       </article>
 
-      <article class="card" data-rating="9.5">
-        <img src="https://picsum.photos/seed/movie6/300/400" alt="파랑의 계절 포스터">
-        <div class="card-body">
-          <h3>파랑의 계절</h3>
-          <p class="genre">드라마</p>
+      <article class="card rounded-lg overflow-hidden flex-2" data-rating="9.2">
+        <img class="w-100 h-300px object-cover" src="https://picsum.photos/seed/movie1/300/400" alt="스텔라 오디세이 포스터">
+        <div class="card-body bg-white px-3 py-4 fs-sm">
+          <h3>스텔라 오디세이</h3>
+          <p class="genre text-gray mb-2">SF · 액션</p>
+          <span class="badge">NEW</span>
+        </div>
+      </article>
+
+      <article class="card rounded-lg overflow-hidden flex-2" data-rating="9.2">
+        <img class="w-100 h-300px object-cover" src="https://picsum.photos/seed/movie1/300/400" alt="스텔라 오디세이 포스터">
+        <div class="card-body bg-white px-3 py-4 fs-sm">
+          <h3>스텔라 오디세이</h3>
+          <p class="genre text-gray mb-2">SF · 액션</p>
           <span class="badge">NEW</span>
         </div>
       </article>
@@ -105,8 +129,9 @@
     </div>
   </section>
 
-  <section class="ranking">
-    <h2>실시간 랭킹</h2>
+  <!--테이블-->
+  <section class="max-w-lg m-auto">
+    <h2 class="title">실시간 랭킹</h2>
     <table>
       <thead>
         <tr>
