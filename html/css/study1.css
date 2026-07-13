@@ -2,19 +2,16 @@
         max-width: 1200px;
         display: flex;
         flex-direction: column;
+        margin: 0 auto;
     }
 
 .header{
     flex-direction: column;
-    border: 1px solid black;
-
     }
 .header-top{
     display: flex;
-    border: 1px solid black;
     height: 150px;
     width: 100%;
-
 }
 
 #header-top1{
@@ -28,4 +25,47 @@
 #header-top3{
     width: 20%;
     border: 1px solid black;
+}
+
+.nav{
+    margin: 10px 0px;
+    border: 1px solid black;
+}
+#menu{
+    display: flex;
+    justify-content: space-around;
+}
+
+.content{
+    display: flex;
+    height: 500px;
+    width: 100%;
+
+}
+#content1{
+    border: 1px solid;
+    width: 30%;
+}
+#content2{
+    border: 1px solid;
+    width: 40%;
+}
+#content3{
+    border: 1px solid;
+    width: 30%;
+}
+
+.footer{
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    margin-top: 10px;
+}
+#footer1{
+    border: 1px solid;
+    height: 70%;
+}
+#footer2{
+    border: 1px solid;
+    height: 30%;
 }
