@@ -6,6 +6,7 @@
   <title>무비 컬렉션 — CSS 선택자 연습</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="/html/css/basic.css">
+  <link rel="stylesheet" href="/html/css/component.css">
 
   <style>
     tr:nth-child(2n){
@@ -35,16 +36,19 @@
   h-50px bg-dark text-white p-5">
     <div class="logo">🎬 무비 컬렉션</div>
     <nav>
-      <ul class="nav-menu d-flex">
+      <!-- .burger가 클릭되면(이벤트가 발생하면) open 클래스를 넣다가 뺐다가 함
+       open 클래스 : nav-menu를 보여줌-->
+      <div class="burger">☰</div>
+      <ul class="nav-menu open">
         <li><a href="#">홈</a></li>
-        <!-- <li class="has-submenu">
+        <li class="has-submenu">
           <a href="#">장르</a>
           <ul class="submenu">
             <li><a href="#">액션</a></li>
             <li><a href="#">로맨스</a></li>
             <li><a href="#">SF</a></li>
           </ul>
-        </li> -->
+        </li>
         <li><a href="#">랭킹</a></li>
         <li><a href="#" class="btn-signup">회원가입</a></li>
       </ul>
@@ -161,5 +165,29 @@
     <p class="copyright">&copy; 2026 무비 컬렉션. All rights reserved.</p>
   </footer>
 
+  <script>
+    // 1. 화면에 있는 요소 선택
+    // 2. 요소에 이벤트를 적용
+
+    const burger = document.querySelector('.burger');
+    const menu = document.querySelector('.nav-menu');
+
+    // 요소에 open 클래스를 넣다가 뺐다가 함
+    // 1. 버거 클릭 → 메뉴 슬라이드 토글
+    burger.addEventListener('click', () => {
+      // toggle : 없으면 넣고 있으면 뺀다
+      menu.classList.toggle('open');
+    });
+
+    // 2. "장르" 클릭 → 서브메뉴 아코디언 토글 (모바일에서만 의미 있음)
+    document.querySelectorAll('.has-submenu > a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();  // # 링크 이동 방지
+        link.parentElement.classList.toggle('open');
+      });
+    });
+
+    
+  </script> 
 </body>
 </html>
