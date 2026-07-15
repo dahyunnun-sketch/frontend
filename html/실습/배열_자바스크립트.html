@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열</h1>
+    <script>
+        // 배열 - 여러개의 데이터를 하나의 변수에 저장
+        // 선언 - []를 이용해서 여러개의 값을 나열
+        // 배열의 길이 - titles.length
+        // 배열의 변수명 [방 번호]
+        const titles = ["도시의 밤", "파랑의 계절", "스텔라 오디세이"];
+        console.log(titles);
+        // 반복문 안에 있는 데이터의 값을 출력하기 위해서 반복문을 이용
+
+        for(let i=0; i<=titles.length-1; i++){
+            // 배열의 방의 데이터 읽어오기
+            console.log(titles[i]);
+        }
+
+        // 배열의 방의 값을 변경하기
+        titles[2] = "타짜";
+        // 변경된 값 확인
+        console.log(titles);
+
+        // 없는 방 번호를 입력하면 = undifined
+        console.log(titles[4]);
+
+        // new Array()를 사용해서 배열을 만드는 방법
+        const arr1 = new Array(1,2,3);
+        console.log(arr1);
+    </script>
+
+    <h2>함수</h2>
+    <script>
+        /*
+        매개변수 : 외부에서 함수를 호출할 때 넣어주는 값 (필수x)
+        반환 : 호출한 곳으로 값을 되돌려 보냄 (필수x)
+
+        함수 작성 방법 - 1. 선언적 함수
+            function 함수이름 (매개변수1, 매개변수2, ...){
+                return 반환할 값(리턴할 값);
+            }
+
+        함수 실행 방법
+            함수명();
+            함수명(값, 값);
+        */
+
+        function print(){
+            console.log('print');
+        }
+
+        // 화살표 함수로 변환
+        let arrow_print = () => console.log('print')
+        arrow_print();
+
+        // 매개변수는 있고 반환(return)이 없는 함수
+        // 함수의 실행 결과 undifined가 반환 됨
+        function print1(msg){
+            console.log(msg);
+        }
+
+        // 익명의 화살표함수를 변수에 저장
+        let arrow_print1 = msg => console.log(msg);
+
+        // 두개의 수를 입력 받아서 두수의 합을 반환하는 함수
+        function add(i,j){
+            return i + j;
+        }
+
+        let arrow_add = (i,j) => i +j;
+
+
+        // 배열메서드 - 배열자체를 변경, 반환만 하는 경우
+        // 함수의 실행결과 반환값을 변수에 저장했다가 다시 사용
+        add(1,2); //호출만 하는 것은 의미가 없음- 반환값이 있고 반환값을 재사용해야 한다면 변수에 저장한다
+        let res = add(1,2);
+        console.log(res);
+
+        /*
+            함수 작성 방법 - 2. 익명의 함수
+            함수를 변수에 저장해서 사용하거나
+            함수를 매개변수로 전달 - 콜백함수 !!!!!
+
+        */
+
+        // 익명의 함수를 변수에 저장
+       let greet = function(name){
+        console.log(`${name}님 반가와요`);
+       }
+
+        // 변수에 저장된 익명의 함수를 실행하는 방법
+        // 변수의 이름을 불러줌()
+        greet();
+        greet("다현");
+
+        // 2개의 수를 입력 받아서 두 수의 합을 반환하는 함수
+        // 타입을 확인해서 숫자가 아니라면 숫자를 '입력해주세요'
+        // 함수명 add2
+        function add2(num1, num2){
+            // 논리연산자 - 여러개의 조건을 연결할 때
+            // && : 두개다 참이면 실행해
+            // || : 둘중에 하나만 참이어도 실행해
+            if(typeof(num1) != 'number'
+                || typeof(num2) != 'number'){
+               return '숫자를 입력해주세요';     
+            }
+            return num1+num2;
+        }
+
+        // 함수 ? 기능을 정의해놓고 반복적으로 사용
+        // 외부로 부터 어떤 값을 받아서 처리 후 반환하는
+        // 선언적 함수
+        function welcome1(){
+            console.log("무비 컬렉션에 오신 것을 환영합니다");
+            // 화면에 있는 요소를 선택
+            let box = document.querySelector(".box")
+            // 요소의 컨텐츠를 변경
+            // += : 기존 컨텐츠를 남기고 이어서 작성
+            // = : 기존 컨텐츠를 지우고 작성
+            box.innerText+="무비 컬렉션에 오신 것을 환영합니다";
+        }
+
+        // 익명의 함수 (변수, 매개변수로 전달(콜백❗❗❗❗))
+        let welcome2 = function(){
+            console.log("무비 컬렉션에 오신 것을 환영합니다");
+        }
+
+        // 익명의 화살표 함수
+        let welcome3 = () => {
+            console.log("무비 컬렉션에 오신 것을 환영합니다");
+        }
+
+        // 박스를 선택
+        // 박스.innerText = 값
+    </script>
+
+    <div class="box"></div>
+</body>
+</html>

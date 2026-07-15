@@ -176,6 +176,89 @@
         console.log("falsy하지 않은 값은 true로 처리돼요");
       }
 
+      /*
+      반복문
+      for(초기식; 조건식; 증감식;){
+      
+      }
+      초기식 - 변수초기화(처음 1번 실행)
+      조건이 참이면 코드블럭이 실행
+      증감식으로 변수의 값을 증가 또는 감소
+      조건이 참이면 코드블럭 실행
+      조건이 참이 아니면 반복문 종료(코드브럭 탈출)
+
+      1부터 10까지 1씩 증가하면서 값을 출력
+      */
+     console.log("--- 반복문 ----")
+     for(let i=0; i<10; i++){ // 증감식 i+=2 : 2씩 증가
+        console.log(i)
+        // 홀수 짝수 판별
+        // + - * / %(나머지 연산자)
+        if( i%2 ==0){
+            console.log(i);
+        }
+    }
+
+    // 구구단 출력하기 1
+    // 2단 출력하기
+    let dan = 2;
+    console.log("2단출력")
+    for(let i=1; i<10; i++){
+        // 2 * 1 = 2
+        console.log(`${dan} * ${i} = ${dan*i}`);
+    }
+
+    // 1 ~ 9
+    console.log("2단부터 9단까지 출력하기")
+    // 구구단 출력하기 2
+    // 이중포문을 이용해서 2단부터 9단까지 출력하기
+
+    // break : 반복문 탈출
+    // continue : 현재 문장만 건너뛰기
+    //            아래 코드를 실행하지 않고 증감식으로 넘어감
+    for(dan=2; dan<10 ; dan++){
+        // if(dan > 3){
+        //     // 반복문 종료
+        //     break;
+        // }
+
+        if(dan % 2 == 0){
+            continue;
+        }
+
+        // dan은 2부터 9까지 출력
+        console.log(dan+"단");
+        for(let i=1; i<10; i++){
+            console.log(`${dan} * ${i} = ${dan * i}`);
+        }
+    }
+
+    /*
+    조건이 참이면 코드블럭을 실행
+    while(조건){
+
+    }
+    */
+   console.log('while문을 사용해서 1부터 10까지 출력해보기')
+
+   let num = 1;
+   while(num <= 10){
+    console.log(num);
+
+    // 셋다 1씩 증가(셋 중 하나만 써도 됨)
+    num = mum + 1;
+    num += 1;
+    num++;
+
+   }
+   
+   while(false){
+    if(num > 10){
+        break;
+    }
+
+   }
+
     </script>
     <!--자바스크립트 외부문서를 연결하는 방법-->
     <script src="/js/main.js"></script>
