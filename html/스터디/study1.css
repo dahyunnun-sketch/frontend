@@ -55,7 +55,7 @@
     width: 30%;
 }
 
-.footer{
+/* .footer{
     display: flex;
     height: 100px;
     flex-direction: column;
@@ -68,4 +68,20 @@
 #footer2{
     border: 1px solid;
     height: 30%;
+} */
+
+th{
+    border: 1px solid;
+    width: 20%;
+    height: 30px;
+}
+table{
+    border: 2px solid;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+td{
+    border: 1px solid;
+    text-align: center;
+    height: 50px;
 }
