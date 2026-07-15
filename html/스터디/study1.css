@@ -30,7 +30,17 @@
 .nav{
     margin: 10px 0px;
     border: 1px solid black;
+    
 }
+.menu1{
+    cursor: pointer;
+}
+.sub_menu{
+    
+}
+
+
+
 #menu{
     display: flex;
     justify-content: space-around;
