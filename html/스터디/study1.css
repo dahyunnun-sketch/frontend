@@ -55,24 +55,18 @@
     width: 30%;
 }
 
-/* .footer{
+
+.footer{
     display: flex;
     height: 100px;
     flex-direction: column;
     margin-top: 10px;
 }
-#footer1{
-    border: 1px solid;
-    height: 70%;
-}
-#footer2{
-    border: 1px solid;
-    height: 30%;
-} */
+
 
 th{
     border: 1px solid;
-    width: 20%;
+    
     height: 30px;
 }
 table{
