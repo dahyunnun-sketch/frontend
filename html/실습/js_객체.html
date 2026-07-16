@@ -77,6 +77,7 @@
             make_lotto();
         }
     );
+    // function()이랑 ()=>은 같은 것
 
 
     // 로또를 만들고 출력하는 기능
@@ -120,6 +121,35 @@
 
 
     }
+    
+
+    // 객체 : 데이터와 기능의 집합
+    // 속성은 키와 값으로 이루어져 있다
+    // {키 : '값', ...}
+    // 문자열인 경우 키는 그냥 작성, 값은 문자열 처리
+    let movie = {
+        title : "스텔라 오디세이",
+        genre : "SF 액션",
+        rating : 9.2,
+        play : function(){
+            console.log(this.title + "재생");
+        }
+    }
+
+    // 객체의 속성을 호출
+    // 1. 이름 . 으로 접근
+    movie.title
+    // 2. ['속성명']으로 접근 : 속성명을 모르는 경우, 속성명에 띄어쓰기가 있는 경우
+    movie['title']
+
+    // for in : 객체인 경우 객체가 가지고 있는 속성의 키값을 꺼내옵니다
+    for(key in movie){
+        console.log(key); // 키 출력
+        console.log(movie[key]); // 값 출력
+    }
+
+    let movie_str = JSON.stringify(movie) // Json 형식의 문자열로 변환
+    let obj = JSON.parse(movie_str) // Json 형식의 문자열 -> js object로 변환
 
    </script>
 
