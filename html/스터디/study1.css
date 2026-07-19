@@ -10,41 +10,73 @@
     }
 .header-top{
     display: flex;
-    height: 150px;
+    height: 50px;
     width: 100%;
 }
 
 #header-top1{
     width: 20%;
-    border: 1px solid black;
+    border: 1px solid;
+    border-right: 0px;
+    text-align: center;
+    padding: 15px;
 }
 #header-top2{
     width: 60%;
-    border: 1px solid black;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
 #header-top3{
     width: 20%;
-    border: 1px solid black;
+    border: 1px solid;
+    border-left: 0px;
+    text-align: end;
+    padding: 15px 15px;
 }
 
-.nav{
+#nav{
     margin: 10px 0px;
     border: 1px solid black;
+    display: flex;
+    
     
 }
-.menu1{
+.menu{
     cursor: pointer;
-}
-.sub_menu{
-    
-}
-
-
-
-#menu{
     display: flex;
     justify-content: space-around;
+    width: 100%;
+    list-style: none;
 }
+
+.sub-menu{
+    position: relative;
+    display: inline-block;
+}
+.menu1{
+    display: none;
+    position: absolute;
+    list-style: none;
+    top: 100%;
+    left: 0;
+}
+.sub-menu:hover .menu1{
+    display: block;
+}
+
+.menu2{
+    display: none;
+    position: absolute;
+    list-style: none;
+}
+.sub-menu1:hover .menu2{
+    display: block;
+}
+
+
+
+
+
 
 .content{
     display: flex;
@@ -54,14 +86,17 @@
 }
 #content1{
     border: 1px solid;
+    border-right: 0px;
     width: 30%;
 }
 #content2{
-    border: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
     width: 40%;
 }
 #content3{
     border: 1px solid;
+    border-left: 0px;
     width: 30%;
 }
 
@@ -76,16 +111,21 @@
 
 th{
     border: 1px solid;
-    
     height: 30px;
+    background-color: rgb(247, 250, 199);
 }
 table{
     border: 2px solid;
     margin-top: 10px;
     border-collapse: collapse;
+    width: 100%;
 }
 td{
     border: 1px solid;
     text-align: center;
     height: 50px;
+}
+img{
+    width: 100%;
+    height: 100%;
 }
