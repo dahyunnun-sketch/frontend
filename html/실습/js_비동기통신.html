@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(1)
+        // setTimeOut(함수, 시간(ms))
+        setTimeout(() => {
+            // 시간이 지난 후 실행 될 함수 => 콜백함수
+            console.log(2)
+
+            setTimeout(() => {
+                console.log(3)
+
+            }, 500);
+        }, 1000);
+
+        
+        // 프로미스 객체는 만들어지면 콜백함수를 바로 실행
+        // Pending (대기중)
+        // resolve -> fullfulled 성공적으로 처리됨
+        // reject -> rejected    실패(오류) 처리됨
+        let obj = new Promise((resolve, reject)=>{
+            // resolve('resolve()호출')
+            reject('rejected()호출') // 반환된 값이 then의 매개변수로 들어감
+        })
+
+        obj
+        .then((msg)=>{
+            console.log('then()', msg)
+        })  // --> resolve 상태일 때 실행
+        .catch(e=>{
+            console.log('catch()', e)
+        })  // --> rejected 상태일 때 실행
+
+        // setTimeout(콜백함수, 시간)
+        function delay(ms, msg){
+            /*
+            setTimeout(() => {
+               console.log('msg', msg) 
+            }, ms);
+            */
+
+            if(ms < 0){
+                throw new Error('시간은 음수를 입력할 수 없습니다.')
+            }
+           return new Promise((resolve, reject)=>{
+            setTimeout(() => {
+                console.log('msg', msg)
+                resolve(`${msg} 종료`);
+            }, ms);
+           })
+        }
+
+        let promise = delay(1000, '음료 주문')
+        promise.then((res)=>{
+            console.log('res',res);
+            return delay(500, '음료 제조')
+        })
+        .then((res)=>{
+            delay(1000, '서빙')
+        })
+        .catch(e =>{
+            console.log(e);
+            console.log('😈오류발생 !');
+        });
+
+        // async/await 이용하기
+        async function init(){
+            // 화면에 있는 요소를 선택해서 변수에 저장
+            let box = document.querySelector('.box')
+
+            let res = await fetch('http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y&actor=%ED%95%98%EC%A7%80%EC%9B%90&ServiceKey=11M1LX721SFQ42K7AQ6R')
+            console.log("fetch 결과", res)
+            let json = await res.json() // 서버로부터 전달받은 데이터를 오브젝트로 변환하여 반환
+            console.log("json() 결과", json)
+            console.log(json.Data[0].Result)
+            let result = json.Data[0].Result
+            console.log('box', box)
+            result.forEach(item => {
+                box.innerHTML += `<p>${item.title}</p>`
+            });
+        }
+
+        window.addEventListener('load', ()=>{
+            init()
+
+        })
+        
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

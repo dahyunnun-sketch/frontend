@@ -97,6 +97,10 @@
                 grid.innerHTML += make_card(item)
             });
         })
+        .catch((e)=>{
+            console.log(e)
+            console.log('fetch 요청 실패 !')
+        })
     }
     </script>
 </head>
